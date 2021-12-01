@@ -125,13 +125,15 @@ public class HttpClientAuthenticationAuthorization {
 		String Tr = data[0];
 		String subscription = data[1];
 		String nonce = data[2];
+		String encodeZ= data[3];
 		
 		/* Create the json body for the request */
 		JsonObject jsonBody = new JsonObject();
-		jsonBody.addProperty("clientID", Constants.clientID);
+		//jsonBody.addProperty("clientID", Constants.clientID);
 		jsonBody.addProperty("timestamp", Tr);
 		jsonBody.addProperty("subscription", subscription);
 		jsonBody.addProperty("nonce", nonce);
+		jsonBody.addProperty("encodeZ", encodeZ);
 		Gson gson = new GsonBuilder().create();
 		String body = gson.toJson(jsonBody);
 		
